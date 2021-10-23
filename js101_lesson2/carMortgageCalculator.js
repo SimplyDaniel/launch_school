@@ -1,10 +1,10 @@
-// This program will help the user determine thier car/mortgage payment 
-/* The program will ask for three pieces of information, 
-  loan amount, APR(Annual Percentage Rate), and loan duration */
+/*This program will help the user determine thier car/mortgage payment
+The program will ask for three pieces of information,
+loan amount, APR(Annual Percentage Rate), and loan duration */
 
 let readline = require('readline-sync');
 
-function prompt(message){
+function prompt(message) {
   console.log(`=> ${message}`);
 }
 
@@ -17,10 +17,11 @@ prompt('Hello, welcome to the car/mortgage calculator please enter your informat
 prompt('What is the amount of your loan?');
 
 let loanAmount = Number(readline.question());
+
 while (invalidnumber(loanAmount)) {
   console.log('Please enter a valid number');
   loanAmount = readline.question();
-};
+}
 
 prompt('What is the Annual Percentage Rate? Please enter as a % value (e.g 5%)');
 
@@ -41,8 +42,10 @@ while (invalidnumber(durationOfLoanYears)) {
   durationOfLoanYears = readline.question();
 }
 
-let durationOfLoanMonthly = 12 * durationOfLoanYears; 
+let durationOfLoanMonthly = 12 * durationOfLoanYears;
 
-let monthlyPayment = loanAmount * (monthlyAPR / (1 - Math.pow((1 + monthlyAPR), (- durationOfLoanMonthly))));
+let monthlyPayment = loanAmount *
+  (monthlyAPR /
+    (1 - Math.pow((1 + monthlyAPR), (-durationOfLoanMonthly))));
 
-console.log(`$`+ monthlyPayment.toFixed(2));
+console.log(`$` + monthlyPayment.toFixed(2));
