@@ -33,8 +33,6 @@ while (invalidnumber(annualPercentageRate)) {
 
 let monthlyAPR = (annualPercentageRate / 100) / 12;
 
-let monthlyInterestRate = monthlyAPR * 100; 
-
 prompt('How many years is the duration of the loan?');
 let durationOfLoanYears = readline.question();
 
@@ -45,6 +43,6 @@ while (invalidnumber(durationOfLoanYears)) {
 
 let durationOfLoanMonthly = 12 * durationOfLoanYears; 
 
-let monthlyPayment = loanAmount * (monthlyInterestRate / (1 - Math.pow((1 + monthlyInterestRate), (- durationOfLoanMonthly))));
+let monthlyPayment = loanAmount * (monthlyAPR / (1 - Math.pow((1 + monthlyAPR), (- durationOfLoanMonthly))));
 
 console.log(`$`+ monthlyPayment.toFixed(2));
