@@ -12,22 +12,22 @@ function invalidnumber(number) {
   return Number.isNaN(Number(number));
 }
 
-prompt('Hello, welcome to the car/mortgage calculator please enter your information below:');
+prompt('Hello, welcome to the car/mortgage calculator please enter your information below.');
 
 prompt('What is the amount of your loan?');
 
 let loanAmount = Number(readline.question());
-
 while (invalidnumber(loanAmount)) {
-  console.log('Hmm.. That is not a valid number. Please enter a valid number');
+  console.log('Please enter a valid number');
   loanAmount = readline.question();
 };
 
 prompt('What is the Annual Percentage Rate? Please enter as a % value (e.g 5%)');
+
 let annualPercentageRate = Number(readline.question());
 
 while (invalidnumber(annualPercentageRate)) {
-  console.log('Hmm that is not a valid number. Please enter a valid number...');
+  console.log('Please enter a valid number');
   annualPercentageRate = readline.question();
 }
 
@@ -37,7 +37,7 @@ prompt('How many years is the duration of the loan?');
 let durationOfLoanYears = readline.question();
 
 while (invalidnumber(durationOfLoanYears)) {
-  console.log('Hmm that is not a valid number. Please enter a valid number...');
+  console.log('Please enter a valid number');
   durationOfLoanYears = readline.question();
 }
 
