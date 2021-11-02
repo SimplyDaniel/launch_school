@@ -1,10 +1,10 @@
-// Question 3
-// Determine whether the following object of people and their age
-// contains an entry for 'Spot':
+// How can you determine whether a given string
+// ends with an exclamation mark (!)?
 
-let ages = { Herman: 32, Lily: 30, Grandpa: 402, Eddie: 10 };
+let str1 = "Come over here!"; // true
+let str2 = "What's up, Doc?"; // false
 
-console.log(ages.hasOwnProperty('Spot'));
+// answer below
 
-// We would have to use the .hasOwnProperty() object function
-// To determine if an object has that property
+str1.endsWith('!');
+str2.endsWith('!');
