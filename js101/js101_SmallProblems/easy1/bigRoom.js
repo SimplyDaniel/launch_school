@@ -15,10 +15,9 @@ const meterWidth = readline.question();
 let sqftWitdh = meterWidth * 10.7639;
 
 let area = meterLength * meterWidth;
-
 let sqftRoom = sqftLength * sqftWitdh;
 
 console.log(area);
 console.log(sqftRoom);
 
-prompt(`The area of the room is ${area} square meters (${sqftRoom.toFixed(2)} square feet)`);
+prompt(`The area of the room is ${area} square meters (${sqftRoom.toFixed(2)} square feet).`);
