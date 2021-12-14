@@ -1,0 +1,17 @@
+// 1. Initialize deck
+// 2. Deal cards to player and dealer
+// 3. Player turn: hit or stay
+//    - repeat until bust or stay
+// 4. If player bust, dealer wins.
+// 5. Dealer turn: hit or stay
+//    - repeat until total >= 17
+// 6. If dealer busts, player wins.
+// 7. Compare cards and declare winner.
+
+const DECK = {
+  Hearts: 4,
+  Diamonds: 4,
+  Clubs: 4,
+  Spades: 4,
+  
+}
