@@ -1,16 +1,16 @@
-// Write a function that takes one integer argument,
-// which may be positive, negative, or zero.
-// This method returns true if the number's absolute value is odd.
-// You may assume that the argument is a valid integer value.
-
-function isOdd (num) {
-
-  if (num % 2) {
-    return true;
-  } else {
-    return false;
-  }
+function isOdd(num) {
+  return Math.abs(num) % 2 === 1;
 }
+
+/*
+On line 1 we have a function declaration with the name isOdd
+with one paramater. On line 2 we call the method Math.abs() which
+returns the absolute value of a number. We then return the number
+argument passed into the function and find the reminder
+of the number that is passed into the function and if the reminder is 1
+which would be odd.
+
+*/
 
 console.log(isOdd(2)); // => false
 console.log(isOdd(5)); // => true
