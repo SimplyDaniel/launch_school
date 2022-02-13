@@ -1,7 +1,11 @@
 function stringy(num) {
-  let stringyNum = `${"10".repeat(num.length)}`;
+  let result = "";
 
-  return stringyNum;
+  for (let idx = 0; idx < num; idx++) {
+    let number = ((idx % 2) === 0) ? 1 : 0;
+    result += number;
+  }
+  return result;
 }
 
 
