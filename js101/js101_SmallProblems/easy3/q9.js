@@ -18,11 +18,31 @@ cleanUp("$$$ Hello!!!!! Daniel!!!!!! $$$");    // " Hello Daniel  "
 D: Array and Strings
 
 A:
-- Create cleanUp function
-- Create non-alpabetic chars variable
-- iterate through string
+- Write the cleanup Function
+- Iterate through
 
 C:
 */
 
-cleanUp("---what's my +*& line?");    // " what s my line "
+function cleanUp(string) {
+  let cleanText = '';
+
+  for (let index = 0; index < string.length; index += 1) {
+    if (isLowerCase(string[index]) || isUpperCase(string[index])) {
+      cleanText += string[index];
+    } else if (cleanText[cleanText.length - 1] !== ' ') {
+      cleanText += ' ';
+    }
+  }
+  return cleanText;
+}
+
+function isLowerCase(char) {
+  return char >= 'a' && char <= 'z';
+}
+
+function isUpperCase(char) {
+  return char >= 'A' && char <= 'Z';
+}
+
+console.log(cleanUp("---what's my +*& line?"));
