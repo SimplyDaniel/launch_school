@@ -1,15 +1,18 @@
+/* eslint-disable max-len */
 /*
-P: Write a function that returns all substrings of a given string
-argument. Starting from the 0th index, once all the subStr are done
-move to index 1 and so on...
+P: Write a functiont that returns all substrings of a string.
 
-Input: String
-Output: Multiple substrings from the string
+
+Input:
+Output:
 
 Explicit Requirements:
 
-- Use the leadingSubstrings function from q4
-- return all substrings fro  0th index and then 1st and so on
+- You should use the leadingSubstrings function in the previous exercise
+- The substrings have to start at the 0th index return all substrings
+  - then move onto the 1st index and so forth...
+-
+
 
 Implicit Requirements:
 
@@ -24,33 +27,52 @@ returns //
   "d", "de",
   "e" ]
 
-D:
+D: Arrays and Strings
 
 A:
 
-- write the substring function
-- in the leading substring function
-  - Declare a count variable
-  -
+My Logic:
 
+- Write the substrings function
+- declare an empty array variable
+- iterate though the string and start at the 1st index
+- declare a variable
+- after each iterateion slice the array
+
+LS Logic:
+
+- write the substrings function
+- declare an empty array variable
+- iterate through the string with a for loop
+  - declare a variable and initialize it to string.substring(startIndex)
+  - reasign substrings = substring.concat(leadingSubstrings(substring)) // which concatenates the leading substrings from the helper function
+- Return substrings;
 C:
 
 */
 
 function substrings(string) {
-  return leadingSubstrings(string);
+  let substrings = [];
+
+  for (let index = 0; index < string.length; index += 1) {
+    let substring = string.substring(index);
+    console.log(`At iteration ${index} the 'substrings' variable value is ${substrings}`);
+    substrings = substrings.concat(leadingSubstrings(substring));
+  }
+
+  return substrings;
 }
 
 function leadingSubstrings(string) {
-  let substringArray = [];
+  let substrings = [];
 
-  for (let i = 0; i <= string.length; i++) {
-    for (let j = i + 1; j < string.length + 1; j++) {
-      substringArray.push(string.slice(i, j));
-    }
+  for (let index = 1; index <= string.length; index += 1) {
+    substrings.push(string.slice(0, index));
   }
-  return substringArray;
+
+  return substrings;
 }
 
-console.log(substrings('abcde'));
 
+
+console.log(substrings('abcde'));
